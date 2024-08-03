@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.navigation {
+    width: 20%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-right: 2px solid #000;
+    &_ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &_link {
+        color: #000;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        font-weight: bold;
+
+        &.active {
+            position: relative;
+            background: #ccc;
+            &::after {
+                content: "▶";
+                position: absolute;
+                right: 5px;
+            }
+        }
+    }
+}
+.body {
+    position: absolute;
+    box-sizing: border-box;
+    width: 80%;
+    top: 0;
+    left: 20%;
+    height: 100vh;
+    overflow: auto;
+}
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2vh 2vw;
+}
+.card {
+    width: 275px;
+    margin: 2vh 0;
+    box-sizing: border-box;
+    border-image: linear-gradient(#ccc, #e7e7e7) 30;
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    padding-bottom: 50px;
+    &_images {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+    &_image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    &_name {
+        padding: 15px 15px;
+        margin: 0;
+    }
+    &_interface {
+        width: 100%;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        box-sizing: border-box;
+        padding: 5px 15px;
+    }
+    &_price {
+        flex-basis: 50%;
+        font-size: 1.2em;
+        color: #6666ff;
+        &::after {
+            content: " ₽";
+        }
+    }
+    &_button {
+        display: block;
+        flex-basis: 50%;
+        text-decoration: none;
+        padding: 10px;
+        border: 1px solid #6666ff;
+        color: #6666ff;
+        border-radius: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+}
+
+.import-form {
+    width: 80%;
+    margin: 2vh auto;
+    &_input-block {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        box-sizing: border-box;
+    }
+    &_label {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #6666ff;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    &_input {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        opacity: 0;
+        &::valid + .import-form_label{
+            background: #000;
+        }
+    }
+    &_button {
+        display: block;
+        margin: 2vh auto;
+        width: 200px;
+        font-size: 1.2em;
+        padding: 10px 0;
+        color: #6666ff;
+        background: #fff;
+        border: 1px solid #6666ff;
+    }
+}
