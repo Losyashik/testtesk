@@ -1,9 +1,8 @@
 
 ## Распаковка
 1. Выполнить установку с помощью команд:<br>
-    <code>npm i
-    composer install
-    </code>
+    <code>npm i</code>
+    <code>composer install</code>
 2. переиминовать .env.example в .env и обновите его с помощью ваших учетных данных базы данных<br>
 3. Выполнить миграции базы данных с помощью команды<br>
     <code>php artisan migrate</code><br>
